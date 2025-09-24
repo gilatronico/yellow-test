@@ -11,6 +11,15 @@ A demonstration application showcasing the core capabilities of the Yellow SDK f
 - **Transfer Simulation**: Mock cross-chain transfer operations
 - **State Management**: Comprehensive application state tracking
 
+## 📝 About This Demo
+
+This is an **educational demonstration** of the Yellow SDK capabilities. It uses:
+- **Address Zero (0x0000...0000)**: A standard placeholder for demos and testing
+- **No Real Smart Contract**: Focuses on SDK integration, not contract deployment
+- **Mock Operations**: Simulates real-world functionality for learning purposes
+
+In production, you would replace the zero address with your deployed smart contract address.
+
 ## 📋 Prerequisites
 
 - Node.js (v14 or higher)
@@ -115,6 +124,7 @@ yellow-test_V1/
 ├── .gitignore          # Git ignore rules
 ├── SUMMARY.md          # SDK overview and features
 ├── GETTING_STARTED.md  # Detailed setup guide
+├── TROUBLESHOOTING.md  # Common issues and solutions
 └── README.md           # This file
 ```
 
@@ -141,8 +151,14 @@ This project is licensed under the ISC License.
 
 For issues and questions:
 - Check the [GETTING_STARTED.md](./GETTING_STARTED.md) guide
+- Review the [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for common issues
 - Review the [Yellow Network documentation](https://docs.yellow.ai)
 - Open an issue in this repository
+
+### Common Issues
+- **Authentication errors**: Check [TROUBLESHOOTING.md](./TROUBLESHOOTING.md#1-authentication-issues)
+- **WebSocket connection problems**: See [TROUBLESHOOTING.md](./TROUBLESHOOTING.md#2-websocket-connection-issues)
+- **Configuration issues**: Review [TROUBLESHOOTING.md](./TROUBLESHOOTING.md#3-configuration-issues)
 
 ## 🔗 Related Links
 

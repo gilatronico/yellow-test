@@ -47,10 +47,10 @@ ws.onopen = async () => {
   const authRequestMsgString = await createAuthRequestMessage({
     wallet: WALLET,
     participant: WALLET,
-    app_name: 'yellow-test_AGR',
-    expire: Math.floor(Date.now() / 1000) + 3600, // 1 hour expiration
+    app_name: process.env.APP_NAME || 'yellow-demo-app',
+    expire: Math.floor(Date.now() / 1000) + (parseInt(process.env.SESSION_EXPIRY) || 3600),
     scope: 'console',
-    application: '0x0000000000000000000000000000000000000000',
+    application: '0x0000000000000000000000000000000000000000', // Demo placeholder - no real contract needed
     allowances: [],
   });
 
@@ -167,8 +167,10 @@ async function createSession() {
   
   console.log(`✅ Session created: ${sessionId}`);
   console.log(`   - Wallet: ${WALLET}`);
-  console.log(`   - App: yellow-test_AGR`);
+  console.log(`   - App: ${process.env.APP_NAME || 'yellow-demo-app'}`);
   console.log(`   - Scope: console`);
+  console.log(`   - Application Contract: 0x0000000000000000000000000000000000000000 (Demo Mode)`);
+  console.log(`   - Note: This is a demo - no real smart contract is deployed`);
 }
 
 async function simulateTransfer() {
@@ -200,6 +202,7 @@ async function showSessionInfo() {
   console.log(`   - JWT Token: ${jwtToken ? 'Present' : 'Not available'}`);
   console.log(`   - Wallet Address: ${WALLET}`);
   console.log(`   - Network: Yellow Network (ClearNet)`);
+  console.log(`   - Application Contract: 0x0000000000000000000000000000000000000000`);
   
   console.log('\n🎉 Demo completed successfully!');
   console.log('   This demonstrates the core capabilities of the Yellow SDK:');
@@ -208,4 +211,11 @@ async function showSessionInfo() {
   console.log('   ✅ JWT token management');
   console.log('   ✅ Session creation');
   console.log('   ✅ Transfer simulation');
+  
+  console.log('\n📝 About this Demo:');
+  console.log('   - This is an EDUCATIONAL demo showing SDK integration');
+  console.log('   - Uses address 0x0000...0000 as a placeholder (no real contract)');
+  console.log('   - In production, you would deploy your own smart contract');
+  console.log('   - The SDK works with any application address you provide');
+  console.log('   - Focus is on authentication and network connectivity');
 }
