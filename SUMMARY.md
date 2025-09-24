@@ -9,7 +9,7 @@ The SDK handles the heavy lifting of authentication and network communication, s
 ## What I Actually Used
 
 ### 🔐 Authentication (The Tricky Part)
-Getting authentication working was... interesting. The SDK uses EIP-712 signing, which is great for security but took some figuring out. Once you get the hang of it, it's pretty straightforward - you sign a message with your wallet, send it over, and get back a JWT token. The wallet integration is smooth once you know what you're doing.
+Getting authentication working was... interesting. The SDK uses EIP-712 data structure signing, common in the industry, which is great for security but took some figuring out. Once you get the hang of it, it's pretty straightforward - you sign a message with your wallet, send it over, and get back a JWT token. The wallet integration is smooth once you know what you're doing.
 
 ### 🌐 WebSocket Connection
 The real-time connection to Yellow's network works well. It's a standard WebSocket, so no surprises there. The connection to ClearNet is stable, though I did run into some connection drops (more on that in the troubleshooting section).
